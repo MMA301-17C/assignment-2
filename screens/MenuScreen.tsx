@@ -46,7 +46,7 @@ const menuItemsToDisplay = [
   },
 ];
 
-const MenuItems = () => {
+const MenuScreen = () => {
   return (
     <SectionList
       sections={menuItemsToDisplay}
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuItems;
+export default MenuScreen;

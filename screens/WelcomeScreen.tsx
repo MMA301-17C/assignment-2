@@ -1,12 +1,14 @@
 import { ScrollView, View, Text, StyleSheet, Image, Pressable } from 'react-native';
 
-export default function WelcomeScreen({ navigation }) {
+import { NavigationProp } from '@react-navigation/native';
+
+export default function WelcomeScreen({ navigation }: { navigation: NavigationProp<any> }) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerWrapper}>
         <Image
           style={styles.image}
-          source={require('./img/logo.png')}
+          source={require('../img/logo.png')}
           resizeMode="cover"
           accessible={true}
           accessibilityLabel={'Little Lemon Logo'}
@@ -58,5 +60,17 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 20,
+  },
+  button: {
+    backgroundColor: '#FFD700',
+    padding: 10,
+    margin: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#333333',
+    fontWeight: 'bold',
   },
 });
