@@ -1,7 +1,8 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from "react";
+import { NavigationProp } from '@react-navigation/native';
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
@@ -15,7 +16,7 @@ export default function LoginScreen() {
     setErrors(newErrors);
 
     if (!newErrors.email && !newErrors.password) {
-      Alert.alert("Login successful", "Welcome to Little Lemon!");
+      navigation.navigate('Welcome');
     }
   };
 
