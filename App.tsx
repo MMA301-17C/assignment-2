@@ -5,9 +5,9 @@ import { View, StyleSheet } from 'react-native';
 
 import LittleLemonHeader from './components/LittleLemonHeader';
 import LittleLemonFooter from './components/LittleLemonFooter';
-import MenuScreen from './screens/MenuScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
-import LoginScreen from './screens/LoginScreen';
+import MenuScreen from './screens/Menu';
+import WelcomeScreen from './screens/Welcome';
+import LoginScreen from './screens/Login';
 
 const Stack = createStackNavigator();
 
