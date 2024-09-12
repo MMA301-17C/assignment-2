@@ -13,12 +13,28 @@ export default function LoginScreen({ navigation }: Readonly<LoginScreenProps>) 
 
   const validateAndLogin = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let emailError = "";
+    let passwordError = "";
+  
+    if (!email) {
+      emailError = "Please enter your email!";
+    } else if (!emailRegex.test(email)) {
+      emailError = "Please enter a valid email address!";
+    }
+  
+    if (!password) {
+      passwordError = "Please enter your password!";
+    } else if (password.length < 8) {
+      passwordError = "Password must be at least 8 characters long!";
+    }
+  
     const newErrors = {
-      email: !email ? "Please enter your email!" : !emailRegex.test(email) ? "Please enter a valid email address!" : "",
-      password: !password ? "Please enter your password!" : password.length < 8 ? "Password must be at least 8 characters long!" : ""
+      email: emailError,
+      password: passwordError
     };
+  
     setErrors(newErrors);
-
+  
     if (!newErrors.email && !newErrors.password) {
       navigation.navigate('Welcome');
     }
