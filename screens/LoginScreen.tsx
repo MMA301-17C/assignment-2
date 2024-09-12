@@ -11,21 +11,26 @@ export default function LoginScreen({ navigation }: Readonly<LoginScreenProps>) 
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
 
+  const EMAIL_REQUIRED_ERROR = "Please enter your email!";
+  const INVALID_EMAIL_ERROR = "Please enter a valid email address!";
+  const PASSWORD_REQUIRED_ERROR = "Please enter your password!";
+  const PASSWORD_LENGTH_ERROR = "Password must be at least 8 characters long!";
+  
   const validateAndLogin = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let emailError = "";
     let passwordError = "";
   
     if (!email) {
-      emailError = "Please enter your email!";
+      emailError = EMAIL_REQUIRED_ERROR;
     } else if (!emailRegex.test(email)) {
-      emailError = "Please enter a valid email address!";
+      emailError = INVALID_EMAIL_ERROR;
     }
   
     if (!password) {
-      passwordError = "Please enter your password!";
+      passwordError = PASSWORD_REQUIRED_ERROR;
     } else if (password.length < 8) {
-      passwordError = "Password must be at least 8 characters long!";
+      passwordError = PASSWORD_LENGTH_ERROR;
     }
   
     const newErrors = {
