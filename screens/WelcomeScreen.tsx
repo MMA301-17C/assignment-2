@@ -2,7 +2,11 @@ import { ScrollView, View, Text, StyleSheet, Image, Pressable } from 'react-nati
 
 import { NavigationProp } from '@react-navigation/native';
 
-export default function WelcomeScreen({ navigation }: { navigation: NavigationProp<any> }) {
+interface WelcomeScreenProps {
+  navigation: NavigationProp<any>;
+}
+
+export default function WelcomeScreen({ navigation }: Readonly<WelcomeScreenProps>) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerWrapper}>

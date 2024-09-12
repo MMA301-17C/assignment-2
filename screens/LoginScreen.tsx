@@ -1,8 +1,12 @@
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { NavigationProp } from '@react-navigation/native';
 
-export default function LoginScreen({ navigation }: { navigation: NavigationProp<any> }) {
+interface LoginScreenProps {
+  navigation: NavigationProp<any>;
+}
+
+export default function LoginScreen({ navigation }: Readonly<LoginScreenProps>) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
