@@ -50,8 +50,8 @@ export default function LoginScreen({ navigation }: Readonly<LoginScreenProps>) 
       <Text style={styles.header}>Welcome to Little Lemon</Text>
       <Text style={styles.title}>Login to continue</Text>
       <View style={styles.form}>
-        {["Email", "Password"].map((placeholder, index) => (
-          <View key={index} style={styles.inputContainer}>
+        {["Email", "Password"].map((placeholder) => (
+          <View key={placeholder} style={styles.inputContainer}>
             <TextInput
               placeholder={placeholder}
               keyboardType={placeholder === "Email" ? "email-address" : "default"}
